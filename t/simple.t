@@ -8,7 +8,7 @@ my @filenames
     = ( 'archive/README', 'archive/a/A', 'archive/a/b/B', 'archive/c/C' );
 
 foreach my $filename ( 't/archive.zip', 't/archive.tgz' ) {
-    my $peek = Archive::Peek->new( filename => $filename, debug => 1 );
+    my $peek = Archive::Peek->new( filename => $filename );
     isa_ok( $peek, 'Archive::Peek' );
     is_deeply( [ $peek->files ], \@filenames );
     is( $peek->file('archive/README'), 'This is in the root directory.

@@ -11,7 +11,6 @@ WriteMakefile(
         'Archive::Tar'               => '0',
         'Archive::Zip'               => '0',
         'Moose'                      => '0',
-        'MooseX::LogDispatch'        => '0',
         'MooseX::Types::Path::Class' => '0',
         'Test::More'                 => '0',
     }

@@ -3,14 +3,8 @@ use Moose;
 use Archive::Peek::Tar;
 use Archive::Peek::Zip;
 use MooseX::Types::Path::Class qw( File );
-our $VERSION = '0.32';
+our $VERSION = '0.33';
 
-with 'MooseX::LogDispatch';
-has 'debug' => (
-    is      => 'rw',
-    isa     => 'Bool',
-    default => 0,
-);
 has 'filename' => (
     is       => 'ro',
     isa      => File,
@@ -23,15 +17,10 @@ sub BUILD {
     my $filename = $self->filename;
     my $basename = $filename->basename;
     if ( $basename =~ /\.zip$/i ) {
-        $self->logger->debug("$filename is a zip") if $self->debug;
         bless $self, 'Archive::Peek::Zip';
     } elsif ( $basename =~ /(\.tar|\.tar\.gz|\.tgz)$/i ) {
-        $self->logger->debug("$filename is a tar") if $self->debug;
         bless $self, 'Archive::Peek::Tar';
     } else {
-        $self->logger->debug("$filename is neither a zip nor tar")
-            if $self->debug;
-        $self->logger->error("Failed to open $filename");
         confess("Failed to open $filename");
     }
 }
