@@ -6,6 +6,7 @@ WriteMakefile(
     NAME         => 'Archive::Peek',
     VERSION_FROM => 'lib/Archive/Peek.pm',
     AUTHOR       => 'Leon Brocard <acme@astray.com>',
+    ABSTRACT     => 'Peek into archives without extracting them',
     LICENSE      => 'perl',
     PREREQ_PM    => {
         'Archive::Tar'               => '0',

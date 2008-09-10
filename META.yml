@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:                Archive-Peek
-version:             0.33
-abstract:            ~
+version:             0.34
+abstract:            Peek into archives without extracting them
 license:             perl
 author:              
     - Leon Brocard <acme@astray.com>

@@ -3,7 +3,7 @@ use Moose;
 use Archive::Peek::Tar;
 use Archive::Peek::Zip;
 use MooseX::Types::Path::Class qw( File );
-our $VERSION = '0.33';
+our $VERSION = '0.34';
 
 has 'filename' => (
     is       => 'ro',
@@ -72,6 +72,8 @@ Leon Brocard <acme@astray.com>
 =head1 COPYRIGHT
 
 Copyright (C) 2008, Leon Brocard.
+
+=head1 LICENSE
 
 This module is free software; you can redistribute it or 
 modify it under the same terms as Perl itself.
